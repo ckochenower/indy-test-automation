@@ -59,6 +59,7 @@ repos.indy.test.automation.sharedfolder.type=
 #              indy-node and indy-test-automation repos above are examples.
 # <REPO> Test Automation
 #repos.<REPO>.path=
+#repos.<REPO>.username=
 #repos.<REPO>.url=git@github.com:<USERNAME>/sovrin-test-automation.git
 #repos.<REPO>.branch=master
 #repos.<REPO>.sharedfolder.type=
