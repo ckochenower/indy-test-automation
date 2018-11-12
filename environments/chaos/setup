@@ -27,7 +27,7 @@ DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
 
 if [ -d "${DIR}/ssh" ]; then
     read -r -p "Delete and recreate directory ${DIR}/ssh? [Y/n] " input
-    if [ "${input}foo" == "foo" ]
+    if [ -z "${input}" ]
     then
         echo "Defaulting to \"Y\""
         input="Y"
@@ -214,7 +214,7 @@ do
         github_username=$(get_property ${github_username_property})
 
         # Check if the username is empty
-        if [ "${github_username}foo" = "foo" ]
+        if [ -z "${github_username}" ]
         then
           # Prompt for the username
           prompt_and_set_property "${github_username_property}" "Please enter your github username:"
@@ -280,5 +280,7 @@ then
   set_int_property "validator.count" 4 25 "${message}" 4
 fi
 
-echo ""
-echo "Setup complete"
+echo
+echo "${BLUE}Setup complete"
+echo
+echo "You may now run \"vagrant up\"${NC}"
